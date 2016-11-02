@@ -1,6 +1,6 @@
 # Inventory Tracker
 
-Mid size personal coding project to familiarize myself with php, sql and database management. 
+Mid-size personal coding project to familiarize myself with php, sql and database management. 
 
 For the front end I am using the below:
 ## [Start Bootstrap](http://startbootstrap.com/) - [SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/)
