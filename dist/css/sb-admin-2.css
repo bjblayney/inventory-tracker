@@ -354,4 +354,4 @@ table.dataTable thead .sorting:after {
 }
 
 /* CUSTOM TEESHIRT LIFE STUFF */
-.newType, .newSize, .success {display: none;}
+.newType, .newSize, .newColour, .success {display: none;}

@@ -24,12 +24,15 @@ if ($_POST['brand'] < 0) {
     $insertBrand = $conn->insert_id;
 }
 
+if ($_POST['colour'] < 0) {
+    $sqlNewColour = "INSERT INTO colour(name) VALUES ('" . $_POST['newShirtColour'] . "')";
+    $conn->query($sqlNewColour);
+    $insertColour = $conn->insert_id;
+}
+
 $shirtType = (!empty($insertId)) ? $insertId : $_POST['shirtType'];
 $brand = (!empty($insertBrand)) ? $insertBrand : $_POST['brand'];
-
-// prepare and bind
-$addInventory = $conn->prepare("INSERT INTO inventory(type,brand,gender,quantity,size,cost,date) VALUES (?, ?, ?, ?, ?, ?, ?)");
-$addInventory->bind_param("iisisis", $theType, $theBrand, $gender, $quantity, $size, $cost, $date);
+$colour = (!empty($insertColour)) ? $insertColour : $_POST['colour'];
 
 // set parameters
 $theType = $shirtType;
@@ -37,13 +40,16 @@ $theBrand = $brand;
 $gender = $_POST['gender'];
 $quantity = $_POST['quantity'];
 $size = $_POST['size'];
+$theColour = $colour;
 $cost = $_POST['totalCost'];
 $date = $_POST['date'];
 
-// and execute
-$addInventory->execute();
+// prepare, bind, execute
+$addInventory = $conn->prepare("INSERT INTO inventory(type,brand,gender,quantity,size,colour,cost,date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$addInventory->bind_param("iisisiis", $theType, $theBrand, $gender, $quantity, $size, $theColour, $cost, $date);
+$response = $addInventory->execute();
 
-if ($conn->query($addInventory) === TRUE) {
+if ($response) {
     //echo "New record created successfully";
     $response_array['status'] = 'success';
 } else {

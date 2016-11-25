@@ -118,6 +118,32 @@ include '../includes/getTypes.php';
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <label>Colour</label>
+                                            <select name="colour" id="colour" class="form-control" required>
+                                                <option value="">Select Colour</option>
+                                                <?php
+                                                    if ($resultColours->num_rows > 0) {
+                                                        // output data of each row
+                                                        while($row = $resultColours->fetch_assoc()) {
+                                                            echo '<option value="' . $row["id"]. '">' . $row["name"]. '</option>';
+                                                        }
+                                                    }
+                                                ?>
+                                                <option value="-1">NEW</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group newColour">
+                                            <label>New Colour</label>
+                                            <input name="newShirtColour" class="form-control" id="newColour">
+                                            <p class="help-block">Type new garment colour here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
                                             <label>Total Cost</label>
                                             <input name="totalCost" class="form-control" required>
                                         </div>

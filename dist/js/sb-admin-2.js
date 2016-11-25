@@ -66,6 +66,14 @@ $(function() {
         }
     });
 
+    //new colour
+    $('#colour').change(function() {
+        if($(this).val() == '-1'){
+            //alert('NEW COLOUR');
+            $('.newColour').slideDown();
+        }
+    });
+
     //shirt-input submit
     $('#shirt-input').submit( function(){
          var myData= $('#shirt-input').serialize();
@@ -83,6 +91,7 @@ $(function() {
                 $('#shirt-input')[0].reset();
                 $('.newType').slideUp();
                 $('.newSize').slideUp();
+                $('.newColour').slideUp();
             }
         });
     });

@@ -29,6 +29,7 @@ include '../includes/getShirts.php';
                                             <th>Type</th>
                                             <th>Gender</th>
                                             <th>Size</th>
+                                            <th>Colour</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -36,7 +37,7 @@ include '../includes/getShirts.php';
                                             if ($allShirtsResults->num_rows > 0) {
                                                 // output data of each row
                                                 while($row = $allShirtsResults->fetch_assoc()) {
-                                                    echo '<tr><td>' . $row["quantity"]. '</td><td>' . $row["brand_name"]. '</td><td>' . $row["shirt_type"]. '</td><td>' . $row["gender"]. '</td><td>' . $row["size"]. '</td></tr>';
+                                                    echo '<tr><td>' . $row["quantity"]. '</td><td>' . $row["brand_name"]. '</td><td>' . $row["shirt_type"]. '</td><td>' . $row["gender"]. '</td><td>' . $row["size"]. '</td><td>' . $row["colour"]. '</td></tr>';
                                                 }
                                             }
                                         ?>
