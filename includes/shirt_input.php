@@ -47,7 +47,7 @@ $date = $_POST['date'];
 // prepare, bind, execute
 $addInventory = $conn->prepare("INSERT INTO inventory(type,brand,gender,quantity,size,colour,cost,date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 $addInventory->bind_param("iisisiis", $theType, $theBrand, $gender, $quantity, $size, $theColour, $cost, $date);
-$response = $addInventory->execute();
+$response = $addInventory->execute();//returns true/false
 
 if ($response) {
     //echo "New record created successfully";

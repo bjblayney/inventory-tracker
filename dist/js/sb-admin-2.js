@@ -95,4 +95,28 @@ $(function() {
             }
         });
     });
+
+    $('#check-inventory').submit( function(){
+
+         $('.theFiltered').hide();
+         $('.theFiltered table tbody').empty();
+
+         var myData = $('#check-inventory').serialize();
+         var theContent = '';
+
+         $.ajax({
+            url : "../includes/checkInventory.php",
+            type: "GET",
+            data : myData
+         }).done(function(data,status,xhr) {
+            //if success
+            $.each(data.payload, function($k,$v){
+                //console.log($v.brand_name);
+                theContent = '<tr><td>' + $v.quantity + '</td><td>' + $v.brand_name + '</td><td>' + $v.shirt_type + '</td><td>' + $v.gender + '</td><td>' + $v.size + '</td><td>' + $v.colour + '</td></tr>';
+                $('.theFiltered table tbody').append(theContent);
+            });
+            $('.theFiltered').slideDown();
+        });
+    });
+
 });

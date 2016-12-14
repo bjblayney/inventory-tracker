@@ -13,6 +13,9 @@ $resultTypes = $conn->query($allTypes);
 $allBrands = "SELECT id, name FROM brand";
 $resultBrands = $conn->query($allBrands);
 
+$allColours = "SELECT id, name FROM colour";
+$resultColours = $conn->query($allColours);
+
 $conn->close();
 
 ?>
