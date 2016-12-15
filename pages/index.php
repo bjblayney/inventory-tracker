@@ -1,5 +1,9 @@
 
-<?php include 'header.php'; ?>
+<?php
+include '../includes/db.php';
+include 'header.php';
+include '../includes/getShirts.php';
+?>
 
         <div id="page-wrapper">
             <div class="row">
@@ -10,20 +14,22 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
+                                    <i class="fa fa-signal fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">260</div>
-                                    <div>Total Tees</div>
+                                    <div class="huge">
+                                        <?php echo $dashboardNumbers['all_qty']; ?>
+                                    </div>
+                                    <div>Total Shirts</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="tables.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -32,7 +38,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <!-- <div class="col-lg-3 col-md-6">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -97,46 +103,45 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i> 5 Recent Projects
+                            <i class="fa fa-pie-chart fa-fw"></i> Size Breakdowns
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="list-group">
                                 <a href="#" class="list-group-item">
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                    Small
+                                    <span class="pull-right text-muted small">
+                                        <em><?php echo $dashboardNumbers['small_qty']; ?></em>
                                     </span>
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
+                                    Medium
+                                    <span class="pull-right text-muted small">
+                                        <em><?php echo $dashboardNumbers['medium_qty']; ?></em>
                                     </span>
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
+                                    Large
+                                    <span class="pull-right text-muted small">
+                                        <em><?php echo $dashboardNumbers['large_qty']; ?></em>
                                     </span>
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
+                                    Extra Large
+                                    <span class="pull-right text-muted small">
+                                        <em><?php echo $dashboardNumbers['xlarge_qty']; ?></em>
                                     </span>
                                 </a>
                             </div>
                             <!-- /.list-group -->
-                            <a href="#" class="btn btn-default btn-block">View All Orders</a>
+                            <a href="tables.php" class="btn btn-default btn-block">View All Orders</a>
                         </div>
                         <!-- /.panel-body -->
                     </div>

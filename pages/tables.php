@@ -36,7 +36,6 @@ include '../includes/getTypes.php';
                                                         }
                                                     }
                                                 ?>
-                                                <option value="-1">NEW</option>
                                             </select>
                                         </div>
                                     </div>
@@ -53,7 +52,6 @@ include '../includes/getTypes.php';
                                                         }
                                                     }
                                                 ?>
-                                                <option value="-1">NEW</option>
                                             </select>
                                         </div>
                                     </div>
@@ -70,7 +68,6 @@ include '../includes/getTypes.php';
                                                         }
                                                     }
                                                 ?>
-                                                <option value="-1">NEW</option>
                                             </select>
                                         </div>
                                     </div>
@@ -96,7 +93,6 @@ include '../includes/getTypes.php';
                                                 <option>Large</option>
                                                 <option>Extra Large</option>
                                                 <option>XX Large</option>
-                                                <option>NEW</option>
                                             </select>
                                         </div>
                                     </div>

@@ -26,16 +26,19 @@ if ($_GET['brand']) {
     $a_param_type[] = 'i';
 }
 if ($_GET['colour']) {
-    $theColour = $_GET['colour'];
-    $sql[] = " colour = $theColour ";
+    $sql[] = " i.type = ? ";
+    $a_bind_params[] = $_GET['type'];
+    $a_param_type[] = 'i';
 }
 if ($_GET['gender']) {
-    $theGender = $_GET['gender'];
-    $sql[] = " gender = $theGender ";
+    $sql[] = " i.type = ? ";
+    $a_bind_params[] = $_GET['type'];
+    $a_param_type[] = 'i';
 }
 if ($_GET['size']) {
-    $theSize = $_GET['size'];
-    $sql[] = " size = $theSize ";
+    $sql[] = " i.type = ? ";
+    $a_bind_params[] = $_GET['type'];
+    $a_param_type[] = 'i';
 }
 
 $query = "SELECT t.name AS shirt_type,
